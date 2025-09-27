@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'finance.middleware.LoginMiddleware',
 ]
 
 ROOT_URLCONF = 'SIH_Backend.urls'
@@ -80,11 +82,14 @@ WSGI_APPLICATION = 'SIH_Backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'sih_backend_db'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'postgres'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'IaidGrKfgEwjtWxOpyjOJRqYvoBsKBRY',
+        'HOST': 'yamabiko.proxy.rlwy.net',  
+        'PORT': '54083',
+        'OPTIONS': {
+            'sslmode': 'require',
+        }
     }
 }
 

@@ -28,6 +28,8 @@ urlpatterns = [
     # Authentication
     path('api/auth/token/', obtain_auth_token, name='api_token_auth'),
 
+    path('user/', include('users.urls')),
+
     # Finance Management URLs
     path('', include('finance.urls')),
 
